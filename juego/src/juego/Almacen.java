@@ -10,25 +10,26 @@ import java.util.HashMap;
  */
 public class Almacen {
     HashMap<Integer, HashMap> almacen=new HashMap<>();
+    Generador pieza;
+    RotarF rotador;
     
-    public Almacen(){
-        
-    }
-    
-    public HashMap crear(){
-        HashMap<Integer, Ficha> cas=new HashMap<>();
-        for (var i=1;i<=6;i++){
-            cas.put(i,new Ficha(1));
-        }
-        return cas;
+    public Almacen(Generador pieza){
+        this.pieza=pieza;
     }
     
     public void almacenar(){
-        this.almacen.put(1, crear());
+        for (int i=1;i<=3;i++){
+            if (almacen.get(i)==null){
+                almacen.put(i,pieza.crearF());
+            }
+        }
     }
     
     public HashMap getPieza(int pos){
         return this.almacen.get(pos);
     }
     
+    public void rotar(int pos){
+        this.rotador.rotar(almacen.get(pos));
+    }
 }

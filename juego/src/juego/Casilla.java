@@ -16,10 +16,6 @@ public class Casilla<T> {
         this.ficha=ficha;
     }
     
-    public void insertar(T cas, String lado){
-        vecinos.put(lado,cas);
-    }
-    
     public void limpiar(){
         this.ficha.cambColor(0);
     }
