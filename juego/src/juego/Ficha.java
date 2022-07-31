@@ -15,8 +15,12 @@ public class Ficha {
         this.color=color;
     }
     
-    public void cambColor(int color){
-        this.color=color;
+    public void limpiar(){
+        this.color=0;
+    }
+    
+    public Integer getColor(){
+        return this.color;
     }
     
     

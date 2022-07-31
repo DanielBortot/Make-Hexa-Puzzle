@@ -20,7 +20,7 @@ public class GeneradorTri extends Generador {
     }
     
     @Override
-    public HashMap crearF(){
+    public HashMap<Integer,Ficha> crearF(){
         this.molde=moldes.getMolde();
         int color=this.getColor();
         

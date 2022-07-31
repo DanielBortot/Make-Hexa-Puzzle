@@ -8,23 +8,29 @@ import java.util.HashMap;
  *
  * @author Daniel
  */
-public class Casilla<T> {
+public class Casilla {
     Ficha ficha;
-    HashMap<String, T> vecinos = new HashMap<>();
+    HashMap<String, Casilla> vecinos = new HashMap<>();
     
     public Casilla(Ficha ficha){
         this.ficha=ficha;
     }
     
-    public void limpiar(){
-        this.ficha.cambColor(0);
+    public void ensamblar(Casilla der, Casilla izq, Casilla vert){
+        if (der!=null){this.vecinos.put("der", der);}
+        if (izq!=null){this.vecinos.put("izq", izq);}
+        if (vert!=null){this.vecinos.put("vert", vert);}
     }
     
-    public void ensamblar(T der, T izq, T vert){
-        this.vecinos.put("der", der);
-        this.vecinos.put("izq", izq);
-        if (vert!=null){
-            this.vecinos.put("vert", vert);
-        }
+    public void limpiar(){
+        this.ficha.limpiar();
+    }
+    
+    public Integer getColor(){
+        return this.ficha.getColor();
+    }
+    
+    public void setFicha(Ficha f){
+        this.ficha=f;
     }
 }

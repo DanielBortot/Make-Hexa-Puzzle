@@ -9,9 +9,8 @@ import java.util.HashMap;
  * @author Daniel
  */
 public class Almacen {
-    HashMap<Integer, HashMap> almacen=new HashMap<>();
+    HashMap<Integer, HashMap<Integer,Ficha>> almacen=new HashMap<>();
     Generador pieza;
-    RotarF rotador;
     
     public Almacen(Generador pieza){
         this.pieza=pieza;
@@ -25,11 +24,12 @@ public class Almacen {
         }
     }
     
-    public HashMap getPieza(int pos){
+    public HashMap<Integer,Ficha> getPieza(int pos){
         return this.almacen.get(pos);
     }
     
-    public void rotar(int pos){
-        this.rotador.rotar(almacen.get(pos));
+    public void eliminarPieza(int pos){
+        this.almacen.remove(pos);
     }
+    
 }

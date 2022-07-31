@@ -15,5 +15,5 @@ public abstract class Generador {
     public Generador(){
     }
     
-    public abstract HashMap crearF();
+    public abstract HashMap<Integer,Ficha> crearF();
 }
