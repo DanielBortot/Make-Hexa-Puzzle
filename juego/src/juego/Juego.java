@@ -16,64 +16,61 @@ public class Juego {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Ficha ficha1=new Ficha(1);
-        Ficha ficha2=new Ficha(2);
-        Ficha ficha3=new Ficha(3);
         
-        Casilla cas1=new Casilla(ficha1);
-        Casilla cas2=new Casilla(ficha2);
-        Casilla cas3=new Casilla(ficha3);
-        Casilla cas4=new Casilla(ficha1);
-        Casilla cas5=new Casilla(ficha2);
-        Casilla cas6=new Casilla(ficha3);
-        Casilla cas7=new Casilla(ficha1);
-        Casilla cas8=new Casilla(ficha2);
-        Casilla cas9=new Casilla(ficha3);
-        Casilla cas10=new Casilla(ficha1);
-        Casilla cas11=new Casilla(ficha2);
-        Casilla cas12=new Casilla(ficha3);
-        Casilla cas13=new Casilla(ficha1);
-        Casilla cas14=new Casilla(ficha2);
-        Casilla cas15=new Casilla(ficha3);
-        Casilla cas16=new Casilla(ficha1);
-        Casilla cas17=new Casilla(ficha2);
-        Casilla cas18=new Casilla(ficha3);
-        Casilla cas19=new Casilla(ficha1);
-        Casilla cas20=new Casilla(ficha2);
-        Casilla cas21=new Casilla(ficha3);
-        Casilla cas22=new Casilla(ficha1);
-        Casilla cas23=new Casilla(ficha2);
-        Casilla cas24=new Casilla(ficha3);
-        Casilla cas25=new Casilla(ficha1);
-        Casilla cas26=new Casilla(ficha2);
-        Casilla cas27=new Casilla(ficha3);
-        Casilla cas28=new Casilla(ficha1);
-        Casilla cas29=new Casilla(ficha2);
-        Casilla cas30=new Casilla(ficha3);
-        Casilla cas31=new Casilla(ficha1);
-        Casilla cas32=new Casilla(ficha2);
-        Casilla cas33=new Casilla(ficha3);
-        Casilla cas34=new Casilla(ficha1);
-        Casilla cas35=new Casilla(ficha2);
-        Casilla cas36=new Casilla(ficha3);
-        Casilla cas37=new Casilla(ficha1);
-        Casilla cas38=new Casilla(ficha2);
-        Casilla cas39=new Casilla(ficha3);
-        Casilla cas40=new Casilla(ficha1);
-        Casilla cas41=new Casilla(ficha2);
-        Casilla cas42=new Casilla(ficha3);
-        Casilla cas43=new Casilla(ficha1);
-        Casilla cas44=new Casilla(ficha2);
-        Casilla cas45=new Casilla(ficha3);
-        Casilla cas46=new Casilla(ficha1);
-        Casilla cas47=new Casilla(ficha2);
-        Casilla cas48=new Casilla(ficha3);
-        Casilla cas49=new Casilla(ficha1);
-        Casilla cas50=new Casilla(ficha2);
-        Casilla cas51=new Casilla(ficha3);
-        Casilla cas52=new Casilla(ficha1);
-        Casilla cas53=new Casilla(ficha3);
-        Casilla cas54=new Casilla(ficha1);
+        Casilla cas1=new Casilla(new Ficha(0));
+        Casilla cas2=new Casilla(new Ficha(0));
+        Casilla cas3=new Casilla(new Ficha(0));
+        Casilla cas4=new Casilla(new Ficha(0));
+        Casilla cas5=new Casilla(new Ficha(0));
+        Casilla cas6=new Casilla(new Ficha(0));
+        Casilla cas7=new Casilla(new Ficha(0));
+        Casilla cas8=new Casilla(new Ficha(0));
+        Casilla cas9=new Casilla(new Ficha(0));
+        Casilla cas10=new Casilla(new Ficha(0));
+        Casilla cas11=new Casilla(new Ficha(0));
+        Casilla cas12=new Casilla(new Ficha(0));
+        Casilla cas13=new Casilla(new Ficha(0));
+        Casilla cas14=new Casilla(new Ficha(0));
+        Casilla cas15=new Casilla(new Ficha(0));
+        Casilla cas16=new Casilla(new Ficha(0));
+        Casilla cas17=new Casilla(new Ficha(0));
+        Casilla cas18=new Casilla(new Ficha(0));
+        Casilla cas19=new Casilla(new Ficha(0));
+        Casilla cas20=new Casilla(new Ficha(0));
+        Casilla cas21=new Casilla(new Ficha(0));
+        Casilla cas22=new Casilla(new Ficha(0));
+        Casilla cas23=new Casilla(new Ficha(0));
+        Casilla cas24=new Casilla(new Ficha(0));
+        Casilla cas25=new Casilla(new Ficha(0));
+        Casilla cas26=new Casilla(new Ficha(0));
+        Casilla cas27=new Casilla(new Ficha(0));
+        Casilla cas28=new Casilla(new Ficha(0));
+        Casilla cas29=new Casilla(new Ficha(0));
+        Casilla cas30=new Casilla(new Ficha(0));
+        Casilla cas31=new Casilla(new Ficha(0));
+        Casilla cas32=new Casilla(new Ficha(0));
+        Casilla cas33=new Casilla(new Ficha(0));
+        Casilla cas34=new Casilla(new Ficha(0));
+        Casilla cas35=new Casilla(new Ficha(0));
+        Casilla cas36=new Casilla(new Ficha(0));
+        Casilla cas37=new Casilla(new Ficha(0));
+        Casilla cas38=new Casilla(new Ficha(0));
+        Casilla cas39=new Casilla(new Ficha(0));
+        Casilla cas40=new Casilla(new Ficha(0));
+        Casilla cas41=new Casilla(new Ficha(0));
+        Casilla cas42=new Casilla(new Ficha(0));
+        Casilla cas43=new Casilla(new Ficha(0));
+        Casilla cas44=new Casilla(new Ficha(0));
+        Casilla cas45=new Casilla(new Ficha(0));
+        Casilla cas46=new Casilla(new Ficha(0));
+        Casilla cas47=new Casilla(new Ficha(0));
+        Casilla cas48=new Casilla(new Ficha(0));
+        Casilla cas49=new Casilla(new Ficha(0));
+        Casilla cas50=new Casilla(new Ficha(0));
+        Casilla cas51=new Casilla(new Ficha(0));
+        Casilla cas52=new Casilla(new Ficha(0));
+        Casilla cas53=new Casilla(new Ficha(0));
+        Casilla cas54=new Casilla(new Ficha(0));
         
         cas1.ensamblar(cas2, null, cas9);
         cas2.ensamblar(cas3, cas1, null);
@@ -135,7 +132,13 @@ public class Juego {
         cas53.ensamblar(cas54, cas52, null);
         cas54.ensamblar(null, cas53, cas46);
         
-        System.out.println(cas1.vecinos.get("gff"));
+        Moldes molde=new MoldeTri();
+        Generador generadorTri=new GeneradorTri(molde);
+        
+        Almacen almacen=new Almacen(generadorTri);
+        almacen.almacenar();
+        
+        System.out.println(almacen.almacen);
     }
     
 }

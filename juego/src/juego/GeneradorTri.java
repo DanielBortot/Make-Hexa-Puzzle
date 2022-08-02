@@ -11,7 +11,8 @@ import java.util.Random;
  */
 public class GeneradorTri extends Generador {
     
-    public GeneradorTri(){
+    public GeneradorTri(Moldes moldes){
+        this.moldes=moldes;
     }
     
     public int getColor(){

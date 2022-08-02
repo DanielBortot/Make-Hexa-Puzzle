@@ -12,7 +12,7 @@ import java.util.Random;
 public class MoldeTri extends Moldes {
     
     @Override
-    public HashMap getMolde(){
+    public HashMap<Integer,Integer> getMolde(){
         HashMap<Integer,Integer> molde1=new HashMap<>();
         HashMap<Integer,Integer> molde2=new HashMap<>();
         HashMap<Integer,Integer> molde3=new HashMap<>();
@@ -26,7 +26,7 @@ public class MoldeTri extends Moldes {
         
         if (op==1){
             int k=1;
-            for (int aux=1;aux<=6;i++){
+            for (int aux=1;aux<=6;aux++){
                 if (k==1){
                     molde1.put(i,1);
                     i++;
@@ -46,7 +46,7 @@ public class MoldeTri extends Moldes {
         
         else if (op==2){
             int k=3;
-            for (int aux=1;aux<=6;i++){
+            for (int aux=1;aux<=6;aux++){
                 if (k>0){
                     molde2.put(i,1);
                     k--;
@@ -64,7 +64,7 @@ public class MoldeTri extends Moldes {
         
         else if (op==3){
             int k=2;
-            for (int aux=1;aux<=6;i++){
+            for (int aux=1;aux<=6;aux++){
                 if (k>0){
                     molde3.put(i,1);
                     k--;
@@ -82,7 +82,7 @@ public class MoldeTri extends Moldes {
         
         else if (op==4){
             int k=4;
-            for (int aux=1;aux<=6;i++){
+            for (int aux=1;aux<=6;aux++){
                 if (k>0){
                     molde4.put(i,1);
                     k--;
@@ -100,7 +100,7 @@ public class MoldeTri extends Moldes {
         
         else if (op==5){
             int k=1;
-            for (int aux=1;aux<=6;i++){
+            for (int aux=1;aux<=6;aux++){
                 if (k>0){
                     molde5.put(i,1);
                     k--;
@@ -118,7 +118,7 @@ public class MoldeTri extends Moldes {
         
         else if (op==6){
             int k=5;
-            for (int aux=1;aux<=6;i++){
+            for (int aux=1;aux<=6;aux++){
                 if (k>0){
                     molde6.put(i,1);
                     k--;
@@ -137,7 +137,7 @@ public class MoldeTri extends Moldes {
         else{
             int k=1;
             int p=3;
-            for (int aux=1;aux<=6;i++){
+            for (int aux=1;aux<=6;aux++){
                 if (k>0 && p>0){
                     molde7.put(i,1);
                     k--;

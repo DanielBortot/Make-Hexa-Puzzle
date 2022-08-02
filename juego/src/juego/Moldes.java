@@ -12,5 +12,5 @@ public abstract class Moldes {
     public Moldes(){  
     }
     
-    public abstract HashMap getMolde();
+    public abstract HashMap<Integer,Integer> getMolde();
 }
