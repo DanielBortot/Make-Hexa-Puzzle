@@ -30,6 +30,7 @@ public class Almacen {
     
     public void eliminarPieza(int pos){
         this.almacen.remove(pos);
+        this.almacenar();
     }
     
 }

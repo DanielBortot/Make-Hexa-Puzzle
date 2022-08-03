@@ -10,9 +10,8 @@ import java.util.ArrayList;
  */
 public class Borrador {
     Barrido recorrer=new Barrido();
-    
-    public Borrador(){
-    }
+    Puntaje puntaje;
+    public Borrador(){}
     
     public void Borrar(Casilla cas,int pos){
         if (cas!=null){
@@ -29,24 +28,24 @@ public class Borrador {
         }
     }
     
-    public void buscar(Casilla cas,ArrayList<Casilla> lista){
-        //if (cas==null){System.out.println(cas);}
+    public Integer buscar(Casilla cas,ArrayList<Casilla> lista){
+        int cont=0;
         if (cas!=null){
-            //System.out.println(cas.getColor());
             if (this.recorrer.comprobar(cas,1,cas.getColor())){
-                
                 this.Borrar(cas,1);
+                cont++;
             }
             lista.add(cas);
             if (!lista.contains(cas.vecinos.get("der"))){
-                this.buscar(cas.vecinos.get("der"),lista);
+                cont+=this.buscar(cas.vecinos.get("der"),lista);
             }
             if (!lista.contains(cas.vecinos.get("izq"))){
-                this.buscar(cas.vecinos.get("izq"),lista);
+                cont+=this.buscar(cas.vecinos.get("izq"),lista);
             }
             if (!lista.contains(cas.vecinos.get("vert"))){
-                this.buscar(cas.vecinos.get("vert"),lista);
+                cont+=this.buscar(cas.vecinos.get("vert"),lista);
             }
         }
+        return cont;
     }
 }

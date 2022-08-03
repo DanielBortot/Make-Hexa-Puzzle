@@ -142,6 +142,7 @@ public class Juego {
         
         Tablero tablero=new Tablero(listaC,6);
         
+        Puntaje puntaje=new Puntaje();
         Moldes molde=new MoldeTri();
         Generador generadorTri=new GeneradorTri(molde);
         
@@ -157,24 +158,16 @@ public class Juego {
         pieza.rotar();
         
         
-        for (int i=1;i<=6;i++){
-            System.out.println(pieza.pieza.get(i).color);
-        }
-        
-        Match match=new Match(cas1,pieza);
+        Match match=new Match(cas1,pieza,puntaje);
         System.out.println("");
         
-        //match.probar(cas21,1);
-        
-        pieza.setPieza(2);
-        
-        
-        
-        for (int i=1;i<=6;i++){
-            System.out.println(pieza.pieza.get(i).color);
-        }
-        
         match.probar(cas21,1);
+        
+        //pieza.setPieza(2);
+        
+       
+        
+        //match.probar(cas21,1);
         
         System.out.println("");
         

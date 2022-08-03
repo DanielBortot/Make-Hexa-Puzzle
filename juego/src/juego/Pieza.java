@@ -19,7 +19,7 @@ public class Pieza {
     }
     
     public void setPieza(int pos){
-        //this.pieza.clear();
+        this.pieza.clear();
         this.pieza.putAll(this.almacen.getPieza(pos));
         this.numPieza=pos;
     }
@@ -36,5 +36,15 @@ public class Pieza {
         this.pieza.clear();
         this.almacen.eliminarPieza(numPieza);
         this.numPieza=0;
+    }
+    
+    public Integer contFichas(){
+        int cont=0;
+        for (int i=1;i<=6;i++){
+            if (this.pieza.get(i).getColor()!=0){
+                cont++;
+            }
+        }
+        return cont;
     }
 }
