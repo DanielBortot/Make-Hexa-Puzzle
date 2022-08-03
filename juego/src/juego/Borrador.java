@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Borrador {
     Barrido recorrer=new Barrido();
-    ArrayList<Casilla> lista=new ArrayList<>();
+    
     public Borrador(){
     }
     
@@ -18,31 +18,34 @@ public class Borrador {
         if (cas!=null){
             cas.limpiar();
             if (pos==1 ){
-                this.Borrar(cas.vecinos.get("der"),pos++);
+                this.Borrar(cas.vecinos.get("der"),pos+1);
             }
             else if (pos==2 || pos==5){
-                this.Borrar(cas.vecinos.get("vert"),pos++);
+                this.Borrar(cas.vecinos.get("vert"),pos+1);
             }
             else if (pos==3 || pos==4){
-                this.Borrar(cas.vecinos.get("izq"),pos++);
+                this.Borrar(cas.vecinos.get("izq"),pos+1);
             }
         }
     }
     
-    public void buscar(Casilla cas){
+    public void buscar(Casilla cas,ArrayList<Casilla> lista){
+        //if (cas==null){System.out.println(cas);}
         if (cas!=null){
+            //System.out.println(cas.getColor());
             if (this.recorrer.comprobar(cas,1,cas.getColor())){
+                
                 this.Borrar(cas,1);
             }
-            this.lista.add(cas);
+            lista.add(cas);
             if (!lista.contains(cas.vecinos.get("der"))){
-                this.buscar(cas.vecinos.get("der"));
+                this.buscar(cas.vecinos.get("der"),lista);
             }
             if (!lista.contains(cas.vecinos.get("izq"))){
-                this.buscar(cas.vecinos.get("izq"));
+                this.buscar(cas.vecinos.get("izq"),lista);
             }
             if (!lista.contains(cas.vecinos.get("vert"))){
-                this.buscar(cas.vecinos.get("vert"));
+                this.buscar(cas.vecinos.get("vert"),lista);
             }
         }
     }

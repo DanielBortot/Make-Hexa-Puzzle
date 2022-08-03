@@ -17,13 +17,13 @@ public class Comprobante {
         
         if (cas!=null){
             if (pos==1 ){
-                b=this.comprobar(cas.vecinos.get("der"),pos++,lisPieza);
+                b=this.comprobar(cas.vecinos.get("der"),pos+1,lisPieza);
             }
             else if (pos==2 || pos==5){
-                b=this.comprobar(cas.vecinos.get("vert"),pos++,lisPieza);
+                b=this.comprobar(cas.vecinos.get("vert"),pos+1,lisPieza);
             }
             else if (pos==3 || pos==4){
-                b=this.comprobar(cas.vecinos.get("izq"),pos++,lisPieza);
+                b=this.comprobar(cas.vecinos.get("izq"),pos+1,lisPieza);
             }
         }
         if (cas==null || (cas.getColor()!=0 && lisPieza.get(pos).getColor()!=0)){

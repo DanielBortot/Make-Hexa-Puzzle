@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package juego;
-import java.util.HashMap;
+import java.util.ArrayList;
 /**
  *
  * @author Daniel
@@ -132,13 +132,61 @@ public class Juego {
         cas53.ensamblar(cas54, cas52, null);
         cas54.ensamblar(null, cas53, cas46);
         
+        ArrayList<Casilla> listaC=new ArrayList<>();
+        listaC.add(cas1);
+        listaC.add(cas8);
+        listaC.add(cas17);
+        listaC.add(cas28);
+        listaC.add(cas39);
+        listaC.add(cas48);
+        
+        Tablero tablero=new Tablero(listaC,6);
+        
         Moldes molde=new MoldeTri();
         Generador generadorTri=new GeneradorTri(molde);
         
         Almacen almacen=new Almacen(generadorTri);
+        Pieza pieza=new Pieza(almacen);
+        //Borrador borrador=new Borrador();
         almacen.almacenar();
         
-        System.out.println(almacen.almacen);
+        
+        pieza.setPieza(3);
+        pieza.rotar();
+        pieza.rotar();
+        pieza.rotar();
+        
+        
+        for (int i=1;i<=6;i++){
+            System.out.println(pieza.pieza.get(i).color);
+        }
+        
+        Match match=new Match(cas1,pieza);
+        System.out.println("");
+        
+        //match.probar(cas21,1);
+        
+        pieza.setPieza(2);
+        
+        
+        
+        for (int i=1;i<=6;i++){
+            System.out.println(pieza.pieza.get(i).color);
+        }
+        
+        match.probar(cas21,1);
+        
+        System.out.println("");
+        
+        /*System.out.println(cas10.getColor());
+        System.out.println(cas11.getColor());
+        System.out.println(cas3.getColor());
+        System.out.println(cas2.getColor());
+        System.out.println(cas1.getColor());
+        System.out.println(cas9.getColor());*/
+        
+        tablero.imprimir();
+        
     }
     
 }

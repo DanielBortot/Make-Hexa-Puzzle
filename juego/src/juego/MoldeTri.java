@@ -24,6 +24,9 @@ public class MoldeTri extends Moldes {
         int op=rand.nextInt(7)+1;
         int i=rand.nextInt(6)+1;
         
+        op=2;
+        i=6;
+        
         if (op==1){
             int k=1;
             for (int aux=1;aux<=6;aux++){

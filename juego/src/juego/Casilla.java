@@ -33,4 +33,8 @@ public class Casilla {
     public void setFicha(Ficha f){
         this.ficha=f;
     }
+    
+    public Casilla getVecino(String dir){
+        return this.vecinos.get(dir);
+    }
 }

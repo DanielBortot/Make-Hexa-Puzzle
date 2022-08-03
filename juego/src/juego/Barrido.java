@@ -15,17 +15,18 @@ public class Barrido {
         Boolean b=true;
         
         if (cas!=null){
+           
             if (pos==1 ){
-                b=this.comprobar(cas.vecinos.get("der"),pos++,color);
+                b=this.comprobar(cas.vecinos.get("der"),pos+1,color);
             }
             else if (pos==2 || pos==5){
-                b=this.comprobar(cas.vecinos.get("vert"),pos++,color);
+                b=this.comprobar(cas.vecinos.get("vert"),pos+1,color);
             }
             else if (pos==3 || pos==4){
-                b=this.comprobar(cas.vecinos.get("izq"),pos++,color);
+                b=this.comprobar(cas.vecinos.get("izq"),pos+1,color);
             }
         }
-        if (cas==null || color!=cas.getColor()){
+        if (cas==null || color!=cas.getColor() || cas.getColor()==0){
             b=false;
         }
         return b;

@@ -24,7 +24,7 @@ public class GeneradorTri extends Generador {
     public HashMap<Integer,Ficha> crearF(){
         this.molde=moldes.getMolde();
         int color=this.getColor();
-        
+        color=1;
         for (int i=1;i<=6;i++){
             if (this.molde.get(i)==1){
                 this.pieza.put(i, new Ficha(color));

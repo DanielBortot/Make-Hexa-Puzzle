@@ -19,7 +19,8 @@ public class Pieza {
     }
     
     public void setPieza(int pos){
-        this.pieza=this.almacen.getPieza(pos);
+        //this.pieza.clear();
+        this.pieza.putAll(this.almacen.getPieza(pos));
         this.numPieza=pos;
     }
     
@@ -27,7 +28,7 @@ public class Pieza {
         return this.pieza;
     }
     
-    public void rotar(int pos){
+    public void rotar(){
         this.rotacion.rotar(this.pieza);
     }
     
