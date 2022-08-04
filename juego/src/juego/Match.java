@@ -10,16 +10,14 @@ import java.util.HashMap;
  * @author Daniel
  */
 public class Match {
-    Pieza pieza;
     Borrador borrador;
     Casilla casPrim;
     Puntaje puntaje;
     Comprobante comp=new Comprobante();
     HashMap<Integer,Ficha> lisPieza=new HashMap<>();
     
-    public Match(Casilla casPrim, Pieza pieza, Puntaje puntaje){
+    public Match(Casilla casPrim, Puntaje puntaje){
         this.casPrim=casPrim;
-        this.pieza=pieza;
         this.puntaje=puntaje;
         this.borrador=new Borrador();
     }
@@ -39,14 +37,14 @@ public class Match {
         }
     }
     
-    public void probar(Casilla cas,int pos){
-        this.lisPieza.putAll(this.pieza.getPieza());
+    public void probar(Casilla cas,int pos,Pieza pieza){
+        this.lisPieza.putAll(pieza.getPieza());
         
         if (this.comp.comprobar(cas,1,lisPieza)){
             this.ensamblar(cas,1);
             ArrayList<Casilla> lista=new ArrayList<>();
-            this.puntaje.contar(this.pieza.contFichas(),this.borrador.buscar(this.casPrim,lista));
-            this.pieza.eliminarPieza();
+            this.puntaje.contar(pieza.contFichas(),this.borrador.buscar(this.casPrim,lista));
+            pieza.eliminarPieza();
             lista.clear();
         }
         else{

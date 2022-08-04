@@ -27,14 +27,19 @@ public class Tablero {
     public void imprimir(){
         for (int i=0;i<this.filas;i++){
             if (i==0 || i==this.filas-1){
-                System.out.print("    ");
+                System.out.print("                  ");
             }
             else if (i==1 || i==this.filas-2){
-                System.out.print("  ");
+                System.out.print("                ");
+            }
+            else if (i==2 || i==this.filas-3){
+                System.out.print("              ");
             }
             this.imprimir2(this.listaC.get(i));
             System.out.println("");
         }
+        System.out.println("");
+        
     }
     
 }

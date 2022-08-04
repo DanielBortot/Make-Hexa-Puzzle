@@ -35,7 +35,7 @@ public class Pieza {
     public void eliminarPieza(){
         this.pieza.clear();
         this.almacen.eliminarPieza(numPieza);
-        this.numPieza=0;
+        this.setPieza(numPieza);
     }
     
     public Integer contFichas(){

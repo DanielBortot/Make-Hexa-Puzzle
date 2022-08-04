@@ -4,6 +4,8 @@
  */
 package juego;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 /**
  *
  * @author Daniel
@@ -132,6 +134,65 @@ public class Juego {
         cas53.ensamblar(cas54, cas52, null);
         cas54.ensamblar(null, cas53, cas46);
         
+        HashMap<Integer,Casilla> listaCas=new HashMap<>();
+        listaCas.put(1,cas1);
+        listaCas.put(2,cas2);
+        listaCas.put(3,cas3);
+        listaCas.put(4,cas4);
+        listaCas.put(5,cas5);
+        listaCas.put(6,cas6);
+        listaCas.put(7,cas7);
+        listaCas.put(8,cas8);
+        listaCas.put(9,cas9);
+        listaCas.put(10,cas10);
+        listaCas.put(11,cas11);
+        listaCas.put(12,cas12);
+        listaCas.put(13,cas13);
+        listaCas.put(14,cas14);
+        listaCas.put(15,cas15);
+        listaCas.put(16,cas16);
+        listaCas.put(17,cas17);
+        listaCas.put(18,cas18);
+        listaCas.put(19,cas19);
+        listaCas.put(20,cas20);
+        listaCas.put(21,cas21);
+        listaCas.put(22,cas22);
+        listaCas.put(23,cas23);
+        listaCas.put(24,cas24);
+        listaCas.put(25,cas25);
+        listaCas.put(26,cas26);
+        listaCas.put(27,cas27);
+        listaCas.put(28,cas28);
+        listaCas.put(29,cas29);
+        listaCas.put(30,cas30);
+        listaCas.put(31,cas31);
+        listaCas.put(32,cas32);
+        listaCas.put(33,cas33);
+        listaCas.put(34,cas34);
+        listaCas.put(35,cas35);
+        listaCas.put(36,cas36);
+        listaCas.put(37,cas37);
+        listaCas.put(38,cas38);
+        listaCas.put(39,cas39);
+        listaCas.put(40,cas40);
+        listaCas.put(41,cas41);
+        listaCas.put(42,cas42);
+        listaCas.put(43,cas43);
+        listaCas.put(44,cas44);
+        listaCas.put(45,cas45);
+        listaCas.put(46,cas46);
+        listaCas.put(47,cas47);
+        listaCas.put(48,cas48);
+        listaCas.put(49,cas49);
+        listaCas.put(50,cas50);
+        listaCas.put(51,cas51);
+        listaCas.put(52,cas52);
+        listaCas.put(53,cas53);
+        listaCas.put(54,cas54);
+        
+        HashMap<Integer,Pieza> listaPieza=new HashMap<>();
+        
+        
         ArrayList<Casilla> listaC=new ArrayList<>();
         listaC.add(cas1);
         listaC.add(cas8);
@@ -141,44 +202,71 @@ public class Juego {
         listaC.add(cas48);
         
         Tablero tablero=new Tablero(listaC,6);
+        PrinPiezas prinPiezas=new PrinPiezas();
         
         Puntaje puntaje=new Puntaje();
         Moldes molde=new MoldeTri();
-        Generador generadorTri=new GeneradorTri(molde);
+        Generador genTri1=new GeneradorTri(molde);
+        Generador genTri2=new GeneradorTri(molde);
+        Generador genTri3=new GeneradorTri(molde);
+     
+        Almacen almacen=new Almacen(genTri1,genTri2,genTri3);
         
-        Almacen almacen=new Almacen(generadorTri);
-        Pieza pieza=new Pieza(almacen);
+        FinalJuego fin=new FinalJuego(almacen);
+        
+        Pieza pieza1=new Pieza(almacen);
+        Pieza pieza2=new Pieza(almacen);
+        Pieza pieza3=new Pieza(almacen);
+        listaPieza.put(1,pieza1);
+        listaPieza.put(2,pieza2);
+        listaPieza.put(3,pieza3);
+        
+        Match match=new Match(cas1,puntaje);
+        ArrayList<Casilla> lisFin=new ArrayList<>();
         //Borrador borrador=new Borrador();
         almacen.almacenar();
+        pieza1.setPieza(1);
+        pieza2.setPieza(2);
+        pieza3.setPieza(3);
+        
+      
         
         
-        pieza.setPieza(3);
-        pieza.rotar();
-        pieza.rotar();
-        pieza.rotar();
+        Scanner entrada=new Scanner(System.in);
+        int piezaN,casillaN,op;
+        do{
+            System.out.println("Puntaje: "+puntaje.puntaje);
+            System.out.println("");
+            tablero.imprimir();
+            prinPiezas.imprimir(pieza1, pieza2, pieza3);
+            
+            System.out.print("Ingrese el numero de la pieza: ");
+            piezaN=entrada.nextInt();
+            System.out.println("");
+            do{
+                System.out.flush();
+                System.out.println("Puntaje: "+puntaje.puntaje);
+                System.out.println("");
+                tablero.imprimir();
+                prinPiezas.imprimir(pieza1, pieza2, pieza3);
+                System.out.print("Desea rotar s/n: ");
+                op=entrada.nextInt();
+                if (op==1){
+                    listaPieza.get(piezaN).rotar();
+                }
+            }while(op==1);
+            
+            System.out.print("Ingrese la posicion de la casilla: ");
+            casillaN=entrada.nextInt();
+            if (casillaN>=1 && casillaN<=54){
+                match.probar(listaCas.get(casillaN),1, listaPieza.get(piezaN));
+            }
+            entrada.nextLine();
+            tablero.imprimir();
+            lisFin.clear();
+        }while (!fin.buscar(cas1,lisFin));
         
         
-        Match match=new Match(cas1,pieza,puntaje);
-        System.out.println("");
-        
-        match.probar(cas21,1);
-        
-        //pieza.setPieza(2);
-        
-       
-        
-        //match.probar(cas21,1);
-        
-        System.out.println("");
-        
-        /*System.out.println(cas10.getColor());
-        System.out.println(cas11.getColor());
-        System.out.println(cas3.getColor());
-        System.out.println(cas2.getColor());
-        System.out.println(cas1.getColor());
-        System.out.println(cas9.getColor());*/
-        
-        tablero.imprimir();
         
     }
     

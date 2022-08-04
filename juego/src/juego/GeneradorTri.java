@@ -21,10 +21,13 @@ public class GeneradorTri extends Generador {
     }
     
     @Override
-    public HashMap<Integer,Ficha> crearF(){
-        this.molde=moldes.getMolde();
+    public HashMap crearF(){
+        this.molde.clear();
+        this.pieza.clear();
+        this.molde.putAll(this.moldes.getMolde());
         int color=this.getColor();
         for (int i=1;i<=6;i++){
+            
             if (this.molde.get(i)==1){
                 this.pieza.put(i, new Ficha(color));
             }
@@ -32,6 +35,8 @@ public class GeneradorTri extends Generador {
                 this.pieza.put(i, new Ficha(0));
             }
         }
+        
+        System.out.println("");
         return this.pieza;
     }
 }

@@ -35,12 +35,15 @@ public class FinalJuego {
     
     public Boolean buscar(Casilla cas,ArrayList<Casilla> lista){
         Boolean b=true;
-        if (cas!=null && cas.getColor()==0 && b){
-            lista.add(cas);
-            b=this.finalizar(cas);
+        if (cas!=null){
+            if (cas.getColor()==0){
+                b=this.finalizar(cas);
+                System.out.println(b);
+            }
             if (b==false){
                 return b;
             }
+            lista.add(cas);
             if (!lista.contains(cas.vecinos.get("der"))){
                 b=this.buscar(cas.vecinos.get("der"),lista);
             }
@@ -51,6 +54,7 @@ public class FinalJuego {
                 b=this.buscar(cas.vecinos.get("vert"),lista);
             }
         }
+        //System.out.println(b);
         return b;
     }
     
