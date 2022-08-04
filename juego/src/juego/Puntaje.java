@@ -25,4 +25,8 @@ public class Puntaje {
         return this.puntaje;
     }
     
+    public void Restar(int costo){
+        this.puntaje-=costo;
+    }
+    
 }

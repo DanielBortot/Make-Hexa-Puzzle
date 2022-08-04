@@ -20,6 +20,7 @@ public class ComodinPieza<T extends Pieza> implements Comodin<T>{
     @Override
     public void eliminar(Pieza pieza){
         if (this.puntaje.getPuntaje()>costo){
+            this.puntaje.Restar(costo);
             pieza.eliminarPieza();
             this.costo*=2;
         }

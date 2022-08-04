@@ -21,6 +21,7 @@ public class ComodinFicha<T extends Casilla> implements Comodin<T>{
     @Override
     public void eliminar(Casilla cas){
         if (this.puntaje.getPuntaje()>costo && cas.getColor()!=0){
+            this.puntaje.Restar(costo);
             cas.limpiar();
             this.costo*=2;
         }
