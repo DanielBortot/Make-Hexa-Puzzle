@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package juego;
-import java.util.Random;
 /**
  *
  * @author Daniel
@@ -13,14 +12,17 @@ public class Puntaje {
     public Puntaje(){}
     
     public void contar(int numF, int cant){
-        Random rand=new Random();
         if (cant>=1){
-            this.puntaje+=numF+70*(rand.nextInt(cant+1)+1);
+            this.puntaje+=numF+70*cant;
         }
         else{
             this.puntaje+=numF;
         }
         
+    }
+    
+    public Integer getPuntaje(){
+        return this.puntaje;
     }
     
 }

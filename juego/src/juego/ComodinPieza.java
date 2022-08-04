@@ -10,11 +10,22 @@ package juego;
  * @param <T>
  */
 public class ComodinPieza<T extends Pieza> implements Comodin<T>{
-    public ComodinPieza(){
+    Puntaje puntaje;
+    int costo;
+    public ComodinPieza(Puntaje puntaje, int costo){
+        this.puntaje=puntaje;
+        this.costo=costo;
     }
     
     @Override
     public void eliminar(Pieza pieza){
-        pieza.eliminarPieza();
+        if (this.puntaje.getPuntaje()>costo){
+            pieza.eliminarPieza();
+            this.costo*=2;
+        }
+    }
+    
+    public Integer getCosto(){
+        return this.costo;
     }
 }

@@ -205,6 +205,8 @@ public class Juego {
         PrinPiezas prinPiezas=new PrinPiezas();
         
         Puntaje puntaje=new Puntaje();
+        ComodinFicha martillo=new ComodinFicha(puntaje,200);
+        ComodinPieza basura=new ComodinPieza(puntaje,100);
         Moldes molde=new MoldeTri();
         Generador genTri1=new GeneradorTri(molde);
         Generador genTri2=new GeneradorTri(molde);
@@ -243,14 +245,17 @@ public class Juego {
             System.out.print("Ingrese el numero de la pieza: ");
             piezaN=entrada.nextInt();
             System.out.println("");
+            
             do{
                 System.out.flush();
                 System.out.println("Puntaje: "+puntaje.puntaje);
                 System.out.println("");
                 tablero.imprimir();
                 prinPiezas.imprimir(pieza1, pieza2, pieza3);
-                System.out.print("Desea rotar s/n: ");
+                
+                System.out.print("Desea rotar 1/0: ");
                 op=entrada.nextInt();
+                
                 if (op==1){
                     listaPieza.get(piezaN).rotar();
                 }
@@ -261,11 +266,35 @@ public class Juego {
             if (casillaN>=1 && casillaN<=54){
                 match.probar(listaCas.get(casillaN),1, listaPieza.get(piezaN));
             }
-            entrada.nextLine();
+            
+            System.out.println("Puntaje: "+puntaje.puntaje);
+            System.out.println("");
             tablero.imprimir();
+            prinPiezas.imprimir(pieza1, pieza2, pieza3);
+            
+            System.out.print("Desea usar comodin? 1/0: ");
+            op=entrada.nextInt();
+            if (op==1){
+                System.out.print("1-Martillo ("+martillo.getCosto()+"pts) Basura ("+basura.getCosto()+"pts): ");
+                op=entrada.nextInt();
+                if (op==1){
+                    System.out.print("Ingresa la casilla que quieres eliminar: ");
+                    op=entrada.nextInt();
+                    if (op>=1 && op<=54){martillo.eliminar(listaCas.get(op));}
+                }
+                else if (op==2){
+                    System.out.print("Ingresa la pieza que quieres eliminar: ");
+                    op=entrada.nextInt();
+                    if (op>=1 && op<=3){basura.eliminar(listaPieza.get(op));}
+                }
+            }
             lisFin.clear();
-        }while (!fin.buscar(cas1,lisFin));
+                
+        }while (!fin.buscar(cas1,lisFin,true));
         
+        entrada.nextLine();
+        tablero.imprimir();
+        lisFin.clear();
         
         
     }

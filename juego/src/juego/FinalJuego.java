@@ -33,25 +33,24 @@ public class FinalJuego {
         return true;
     }
     
-    public Boolean buscar(Casilla cas,ArrayList<Casilla> lista){
-        Boolean b=true;
+    public Boolean buscar(Casilla cas,ArrayList<Casilla> lista, Boolean b){
         if (cas!=null){
             if (cas.getColor()==0){
                 b=this.finalizar(cas);
-                System.out.println(b);
             }
             if (b==false){
                 return b;
             }
+            
             lista.add(cas);
             if (!lista.contains(cas.vecinos.get("der"))){
-                b=this.buscar(cas.vecinos.get("der"),lista);
+                b=this.buscar(cas.vecinos.get("der"),lista,b);
             }
             if (!lista.contains(cas.vecinos.get("izq"))){
-                b=this.buscar(cas.vecinos.get("izq"),lista);
+                b=this.buscar(cas.vecinos.get("izq"),lista,b);
             }
             if (!lista.contains(cas.vecinos.get("vert"))){
-                b=this.buscar(cas.vecinos.get("vert"),lista);
+                b=this.buscar(cas.vecinos.get("vert"),lista,b);
             }
         }
         //System.out.println(b);
