@@ -205,8 +205,8 @@ public class Juego {
         PrinPiezas prinPiezas=new PrinPiezas();
         
         Puntaje puntaje=new Puntaje();
-        ComodinFicha martillo=new ComodinFicha(puntaje,200);
-        ComodinPieza basura=new ComodinPieza(puntaje,100);
+        ComodinFicha martillo=new ComodinFicha(puntaje,5);
+        ComodinPieza basura=new ComodinPieza(puntaje,2);
         Moldes molde=new MoldeTri();
         Generador genTri1=new GeneradorTri(molde);
         Generador genTri2=new GeneradorTri(molde);
@@ -242,9 +242,10 @@ public class Juego {
             tablero.imprimir();
             prinPiezas.imprimir(pieza1, pieza2, pieza3);
             
-            System.out.print("Ingrese el numero de la pieza: ");
-            piezaN=entrada.nextInt();
-            System.out.println("");
+            do{
+                System.out.print("Ingrese el numero de la pieza: ");
+                piezaN=entrada.nextInt();
+            } while (piezaN<1 || piezaN>3);
             
             do{
                 System.out.flush();
